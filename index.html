@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/ress.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="">
+        <div class="container">
+            <div class="form__content">
+                <form class="form" action="">
+                    <!-- TODO -->
+                    <!-- для этого есть специальный тег label -->
+                    <p class="form__input">Автор</p>
+                    <input name="author" class="form__input__author" type="text" placeholder="Введите ваше имя" >
+                    <p class="form__input"> Заголовок</p>
+                    <input name="title" class="form__input__title" type="text" placeholder="Введите заголовок" >
+                    <p class="form__input">Текст сообщения</p>
+                    <textarea name="text" class="form__input__text" placeholder="Введите ваше сообщение" cols="30"
+                        rows="10" ></textarea>
+                    <button type="submit" class="button__preview">Предпросмотр</button>
+                </form>
+            </div>
+            <div class="form__preview">
+            </div>
+        </div>
+    </main>
+</body>
+<script src="./src/script.js"></script>
+
+</html>

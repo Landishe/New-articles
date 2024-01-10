@@ -1,0 +1,21 @@
+@import url("./form.css");
+@import url("./preview.css");
+@import url("./workMessage.css");
+
+.body {
+  margin: 0px auto;
+  font-family: "Noto Sans", sans-serif;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  /* max-width: 1440px; */
+  padding-top: 5px;
+  margin: auto auto;
+  /* background-color: rgb(241, 241, 241); */
+  min-height: 100vh;
+
+  /* TODO */
+  /* зачем картинка? это же просто фоновый цвет */
+  background-image: url("../img/background.png");
+}
