@@ -21,6 +21,7 @@ let newButtonSend;
 let memory
 let allBlocks
 let authorPreView
+let newWindow = true;
 // TODO
 // ошибка в слове. ЧТоб подсвечивались установи cSpell(не нашел расширение)
 const authorAnonumus = "Anonymous";
@@ -31,17 +32,17 @@ const textError = "Ошибка, введите текст статьи";
 function doPreview(event) {
   event.preventDefault();
 
-  // Собираем все с форм в объект
+// Собираем все с форм в объект
   let newForm = new FormData(form)
   let formDateObject = Object.fromEntries(newForm);
   console.log(formDateObject);
   
-  // Создание Общего класса предпросмотра
+// Создание Общего класса предпросмотра
   allBlocks = document.createElement("div");
   allBlocks.className = "form__preview__allBlocks";
   formPreview.appendChild(allBlocks);
 
-  // Создание даты
+// Создание даты
   let date = new Date();
   let formatter = new Intl.DateTimeFormat("ru", {
     hour: "numeric",
@@ -51,7 +52,7 @@ function doPreview(event) {
     day: "numeric",
   });
 
-  // добавляем форму в объект
+// добавляем форму в объект
   textMessage = {
     id: id,
     title: formDateObject.title,
@@ -63,7 +64,7 @@ function doPreview(event) {
   arrForm.push(textMessage);
   console.log(textMessage);
   
-  // Получаем в предпросмотр анонима
+// Получаем в предпросмотр анонима
   if (textMessage.author === "") {
     textMessage.author = authorAnonumus
     authorPreView = document.createElement("h3");
@@ -71,7 +72,7 @@ function doPreview(event) {
     authorPreView.className = "form__preview__author";
     allBlocks.appendChild(authorPreView);
     console.log (textMessage.author);
-    // добавляем в предпросмотр дату
+// добавляем в предпросмотр дату
     let dateToday = document.createElement("p");
     dateToday.innerText = textMessage.date;
     dateToday.className = "form__preview__date";
@@ -83,16 +84,14 @@ function doPreview(event) {
     authorPreView.innerText = textMessage.author;
     authorPreView.className = "form__preview__author";
     allBlocks.appendChild(authorPreView);
-    
-    // добавляем в предпросмотр дату
+// добавляем в предпросмотр дату
     let dateToday = document.createElement("p");
     dateToday.innerText = textMessage.date;
     dateToday.className = "form__preview__date";
     allBlocks.appendChild(dateToday);
-    
   }
 
- //Если не введен текст и заголовок то выдает ошибку на красном поле
+//Если не введен текст и заголовок то выдает ошибку на красном поле
   if (textMessage.title === "" || textMessage.text === "") {
     let newTitleView = document.createElement("h2");
     newTitleView.innerText = titleError;
@@ -116,7 +115,7 @@ function doPreview(event) {
     newViewText.className = "form__preview__text";
     allBlocks.appendChild(newViewText);
   }
-  // Получаем в предпросмотр кнопку "Отправить"
+// Получаем в предпросмотр кнопку "Отправить"
   if (isButtonTest === true) {
     isButtonTest = false;
     newButtonSend = document.createElement("button");
@@ -124,10 +123,10 @@ function doPreview(event) {
     newButtonSend.textContent = "Отправить";
     allBlocks.appendChild(newButtonSend);
   } else if (isButtonTest === false) {
-    // Удаляем первую кнопку "Отправить"
+// Удаляем первую кнопку "Отправить"
     newButtonSend.remove();
 
-    // Получаем заного в предпросмотр кнопку "Отправить"
+// Получаем заного в предпросмотр кнопку "Отправить"
     newButtonSend = document.createElement("button");
     newButtonSend.className = "button__form";
     newButtonSend.textContent = "Отправить";
@@ -143,9 +142,7 @@ function doPreview(event) {
 // Получаем результат на новой странице
 function addMessage() {
   if (textMessage.title != "" && textMessage.text != "") {
-    localStorage.setItem('isAllMessage', arrForm);
+  localStorage.setItem('isAllMessage', arrForm);
     localStorage.arrForm = JSON.stringify({arrForm})
-  }}
-
-
+}}
 form.addEventListener('submit', doPreview);

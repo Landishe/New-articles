@@ -14,6 +14,7 @@
     color: rgb(214, 214, 214);
     font-weight: 700;
     padding-bottom: 10px; 
+    overflow-wrap: break-word;
 }
 
 .form__done__text {
@@ -24,6 +25,7 @@
     background-color: rgb(94, 94, 94);
     color: rgb(214, 214, 214);
     word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .form__done__author{
@@ -45,6 +47,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     color: rgb(214, 214, 214);
+    overflow-wrap: break-word;
 }
 
 .form__date__done{

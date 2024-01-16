@@ -9,13 +9,11 @@
 .container {
   display: flex;
   justify-content: center;
-  /* max-width: 1440px; */
   padding-top: 5px;
   margin: auto auto;
-  /* background-color: rgb(241, 241, 241); */
   min-height: 100vh;
 
   /* TODO */
-  /* зачем картинка? это же просто фоновый цвет */
+  /* зачем картинка? это же просто фоновый цвет (я долгобился чтобы растянуть контейнер на весь экран, но он упрямо не хотел растягиваться и поэтому добавлена легкая картинка которая заполняет все пространство)*/
   background-image: url("../img/background.png");
 }

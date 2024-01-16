@@ -35,6 +35,7 @@ for(let i of isSaveForm.arrForm){
     console.log(i.id)
   
 } else {
+     
 // Создаем новую разметку если второе и последующее сообщение
     newAllBlocks = document.createElement('div');
     newAllBlocks.className = 'form__done__allBlocks'

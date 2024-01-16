@@ -34,6 +34,7 @@
     width: 500px;
     background-color: rgb(218, 218, 218);
     border-radius: 5px 5px 5px 5px;
+    overflow-wrap: break-word;
 }
 .preview__title__error{
     display: flex;
